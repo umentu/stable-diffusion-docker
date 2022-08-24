@@ -2,7 +2,7 @@ FROM  ubuntu:22.04
 
 ENV TZ=Asia/Tokyo
 
-RUN apt update && apt upgrade -y && apt install git wget -y
+RUN apt update && apt upgrade -y && apt install git git-lfs wget libglib2.0-0 libsm6 libxrender1 libxext-dev -y
 RUN git clone https://github.com/asdf-vm/asdf.git ~/.asdf\
     && echo '. $HOME/.asdf/asdf.sh' >> ~/.bashrc\
     && exec bash -l\
