@@ -13,6 +13,7 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh\
     && sh Miniconda3-latest-Linux-x86_64.sh -b -p /opt/miniconda\
     && rm -r Miniconda3-latest-Linux-x86_64.sh
 ENV PATH /opt/miniconda/bin:$PATH
+ENV CUDA_VISIBLE_DEVICES 0
 RUN git clone https://github.com/basujindal/stable-diffusion.git\
         && cd stable-diffusion\
         && conda init bash\
